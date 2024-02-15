@@ -131,56 +131,80 @@ int deletar()
 
 int main()
 {
+	
+	setlocale(LC_ALL, "Portuguese");
+
+	
 	int opcao=0;
 	int laco=1;
+	char senhadigitada[10]="a";
+	int comparacao;
 	
-	for(laco=1;laco=1;)
+	printf("--- Cartório da EBAC ---\n\n");
+	printf("Login de adiminstrador\n\n");
+	printf("Digite sua senha:  ");
+	scanf("%s", senhadigitada);
+	
+	comparacao = strcmp(senhadigitada, "admin");
+	
+	if(comparacao == 0)
 	{
-			
-			system("cls");
 		
 	
-		setlocale(LC_ALL, "Portuguese");
 	
 	
-		printf("--- Cartório da EBAC ---\n\n");
-		printf("Escolha a opção do menu:\n\n");
-	
-		printf("\thello world :wave:\n\n"); 
-	
-		printf("\t1 - registrar nomes\n"); //vale lembrar para o eu do futuro \n é um espaço de linha, quase apertar um botão enter no teclado
-		printf("\t2 - consultar nomes\n"); //já o \t é um espaço de linha, basicamente apertar TAB em uma linha no word!
-		printf("\t3 - deletar nomes\n");
-		printf("\t4 - sair do sistema\n\n\n");
-		printf("Opção: ");
-	
-		scanf("%d", &opcao);
-	
-		system("cls");
-		
-		switch(opcao)
+		for(laco=1;laco=1;)
 		{
-			case 1:
-			registro();
-			break;
+				
+				system("cls");
 			
-			case 2:
-			consulta();
-			break;
-			
-			case 3:
-			deletar();
-			break;
-			
-			case 4:
-			printf("obrigado por utilizar o sistema!");
-			return 0;
-			break;
 		
-			default:
-			printf("Essa opção não existe\n");
-			system("pause");
-			break;
-		}
+			setlocale(LC_ALL, "Portuguese");
+		
+		
+			printf("--- Cartório da EBAC ---\n\n");
+			printf("Escolha a opção do menu:\n\n");
+		
+			printf("\thello world :wave:\n\n"); 
+		
+			printf("\t1 - registrar nomes\n"); //vale lembrar para o eu do futuro \n é um espaço de linha, quase apertar um botão enter no teclado
+			printf("\t2 - consultar nomes\n"); //já o \t é um espaço de linha, basicamente apertar TAB em uma linha no word!
+			printf("\t3 - deletar nomes\n");
+			printf("\t4 - sair do sistema\n\n\n");
+			printf("Opção: ");
+		
+			scanf("%d", &opcao);
+		
+			system("cls");
+			
+			switch(opcao)
+			{
+				case 1:
+				registro();
+				break;
+				
+				case 2:
+				consulta();
+				break;
+				
+				case 3:
+				deletar();
+				break;
+				
+				case 4:
+				printf("obrigado por utilizar o sistema!");
+				return 0;
+				break;
+			
+				default:
+				printf("Essa opção não existe\n");
+				system("pause");
+				break;
+			}
+		
+		}	
 	}
+	
+	else
+		printf("Senha incorreta");
 }					
